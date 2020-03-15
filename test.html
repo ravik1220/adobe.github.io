@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+   
+</head>
+<body>
+  
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fa fa-star" aria-hidden="true"></i>
+    </a>
+    </div>
+    <ul class="nav navbar-nav" style="display: none">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><input class="form-control" id="searchFiled" type="search" placeholder="Search"/><i id="myBtnClose" class="fa fa-close"></i><i id="myBtn" class="fa fa-search"></i></li>
+      <li class="cart"><span id="cartCountValue"></span><i class="fa fa-shopping-cart"></i></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid table-page">
+<div class="alert alert-success" id="successCart" style="display: none;">
+  <strong>Success!</strong> Item added successful..!!
+</div>
+	<div class="row">
+		<div class="">
+			<div class="mobileFilerWrapper">
+				<div class="col-sm-6"><h4 id= "myModalSort"><span class="sortIcon"><span>Sort</h4></div>
+				<div class="col-sm-6"><h4 id = "myModalFilter"><span class="sortFilterIcon"><span>Filters</h4></div>
+			</div>
+			<div class="col-sm-3 mob-hid">
+				<h4>Filters</h4>
+                <div class="slidecontainer">
+				  <h4>Filters Options</h4>
+                  <label><span class='minval'><i class='fa fa-inr'></i>100</span><span class="maxval"><i class='fa fa-inr'></i>10000</span></label>
+                  <input type="range" min="100" max="10000" value="100" class="slider" id="myRange">
+                    <p>Price  <span id="pricedemo"></span></p>
+					<div class="filterBlock">
+						<button class="btn btn-primary" id="slider-dataClose">Cancel</button> 
+						<button class="btn btn-primary" id="slider-data">Apply</button> 
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="sortoptions">
+					<span class="Sort">Sort By  </span>
+					<h4>Sort Options</h4>
+					<span class="low"><button onclick="w3.sortHTML('#fieldData', '.item', '.content-block ul .priceValue')" class="">Price -- High Low</button></span>
+					<span class="high"><button onclick="w3.sortHTML('#fieldData', '.item', '.content-block ul .priceValue')" class="">Price -- Low High</button></span>
+					<span class="discount"><button onclick="w3.sortHTML('#fieldData', '.item', '.content-block ul .priceDiscount')" class="">Discount</button></span>
+					<div class="filterBlock">
+						<button class="btn btn-primary" id="slider-dataCloseSort">Cancel</button> 
+						<button class="btn btn-primary" id="slider-dataSort">Apply</button> 
+					</div>
+				</div>
+				<div class="table-wrapper">
+					<div class="table table-striped" id = "fieldData">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="cart_wrapper">
+		<div class="cartBtn-wrapper">
+			<button class="btn btn-primary closeCart">X</button>
+		</div>
+			
+			<div class="col-sm-9">
+				<div class="cart1"></div>
+				
+			</div>
+			<div class="col-sm-3">
+				<div class="price_wrapper">
+					<h3 style="margin: 0 0 10px 0;">Price Details</h3>
+					<hr>
+					<p>Price (1 Item) :<span id = "priceItems"></span><p>
+					<p>Discount :<span id = "priceDiscountItems"></span><p>
+					<hr>
+					<p>Total Payable :<span id = "priceDiscountTotal"></span><p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  
+</body>
+ 
+</html>
